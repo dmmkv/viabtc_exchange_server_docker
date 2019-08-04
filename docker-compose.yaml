@@ -59,6 +59,8 @@ services:
   mysql:
     container_name: btc-mysql
     build: ./db/
+    volumes:
+      - ../viabtc_exchange_server_docker__btc-mysql__data:/var/lib/mysql
     ports:
       - "127.0.0.1:13306:3306"
 
