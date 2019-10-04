@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   btc:
@@ -32,12 +32,16 @@ services:
   redis_master:
     container_name: btc-redis-master
     image: redis:4.0.2-alpine
+    volumes:
+      - ../viabtc_exchange_server_docker__btc-redis_master__data:/data
     ports:
       - "127.0.0.1:16379:6379"
 
   redis_slave:
     container_name: btc-redis-slave
     image: redis:4.0.2-alpine
+    volumes:
+      - ../viabtc_exchange_server_docker__btc-redis_slave__data:/data
     ports:
       - "16380:6379"
 
@@ -45,6 +49,8 @@ services:
     container_name: btc-redis-sentinel
     build: redis
     image: redis-sentinel
+    volumes:
+      - ../viabtc_exchange_server_docker__btc-redis_sentinel__data:/data
     environment:
       - MASTER_NAME=mymaster
       - QUORUM=1
