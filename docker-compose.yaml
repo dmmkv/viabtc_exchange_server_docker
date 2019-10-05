@@ -33,7 +33,7 @@ services:
     container_name: btc-redis-master
     image: redis:4.0.2-alpine
     volumes:
-      - ../viabtc_exchange_server_docker__btc-redis_master__data:/data
+      - ../viabtc_exchange_server_docker__data/btc-redis_master__data:/data
     ports:
       - "127.0.0.1:16379:6379"
 
@@ -41,7 +41,7 @@ services:
     container_name: btc-redis-slave
     image: redis:4.0.2-alpine
     volumes:
-      - ../viabtc_exchange_server_docker__btc-redis_slave__data:/data
+      - ../viabtc_exchange_server_docker__data/btc-redis_slave__data:/data
     ports:
       - "16380:6379"
 
@@ -50,7 +50,7 @@ services:
     build: redis
     image: redis-sentinel
     volumes:
-      - ../viabtc_exchange_server_docker__btc-redis_sentinel__data:/data
+      - ../viabtc_exchange_server_docker__data/btc-redis_sentinel__data:/data
     environment:
       - MASTER_NAME=mymaster
       - QUORUM=1
@@ -66,7 +66,7 @@ services:
     container_name: btc-mysql
     build: ./db/
     volumes:
-      - ../viabtc_exchange_server_docker__btc-mysql__data:/var/lib/mysql
+      - ../viabtc_exchange_server_docker__data/btc-mysql__data:/var/lib/mysql
     ports:
       - "127.0.0.1:13306:3306"
 
