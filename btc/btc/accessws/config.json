@@ -56,7 +56,7 @@
   },
   "backend_timeout": 1.0,
   "cache_timeout": 10.0,
-  "auth_url": "http://172.17.0.1:8044/internal/exchange/user/auth",
+  "auth_url": "http://172.17.0.1:8044/api/v1/json/exchange_user/ws_auth",
   "sign_url": "http://192.168.1.6:8000/internal/exchange/user/api/auth",
   "depth_limit": [1, 5, 10, 20, 30, 50, 100],
   "depth_merge": [
