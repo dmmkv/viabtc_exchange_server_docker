@@ -43,7 +43,7 @@ services:
     volumes:
       - ../viabtc_exchange_server_docker__data/btc-redis_slave__data:/data
     ports:
-      - "16380:6379"
+      - "127.0.0.1:16380:6379"
 
   redis_sentinel:
     container_name: btc-redis-sentinel
