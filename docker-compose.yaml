@@ -74,7 +74,7 @@ services:
     container_name: btc-zookeeper
     image: wurstmeister/zookeeper
     ports:
-      - "12181:2181"
+      - "127.0.0.1:12181:2181"
 
   kafka:
     container_name: btc-kafka
